@@ -1,0 +1,9 @@
+package br.com.fiap.daoImpl;
+
+public class GastodaoImpl {
+
+	public GastodaoImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,13 @@
+package br.com.fiap.dao;
+
+import java.util.Calendar;
+import java.util.List;
+
+import br.com.fiap.entity.Gasto;
+
+public interface GastoDao extends GenericDAO<Gasto,Integer> {
+
+    List<Gasto> buscarPorData (Calendar data );
+	
+	
+}

@@ -1,0 +1,29 @@
+package br.com.fiap.daoImpl;
+
+import java.util.Calendar;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import br.com.fiap.dao.GastoDAO;
+import br.com.fiap.entity.Gasto;
+
+public class GastodaoImpl extends GenericDAOImpl<Gasto,Integer,Calendar> implements GastoDAO{
+	public GastodaoImpl(EntityManager em) {
+		super(em);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public List<T> buscarPorData(D data) {
+		TypedQuery<T> q = em.createQuery("from T_GASTOS g where g.dataGasto = :data",classz);
+		q.setParameter(classz,data);
+	}
+	@Override
+	public void gerarPlanilha(List<T> lista) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

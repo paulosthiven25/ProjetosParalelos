@@ -1,0 +1,16 @@
+package br.com.fiap.daoImpl;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.dao.GastoDAO;
+import br.com.fiap.entity.Gasto;
+
+public class GastodaoImpl extends GenericDAOImpl <Gasto,Integer>{
+
+	public GastodaoImpl(EntityManager em) {
+		super(em);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+}

@@ -1,0 +1,42 @@
+package br.com.fiap.daoImpl;
+
+import java.util.Calendar;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.dao.GastoDAO;
+import br.com.fiap.entity.Gasto;
+import br.com.fiap.exception.CodigoInexistenteException;
+
+public class GastodaoImpl extends GenericDAOImpl<Gasto,Integer,Calendar> implements GastoDAO{
+	public GastodaoImpl(EntityManager em) {
+		super(em);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void cadastrar(Gasto tabela) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remover(Integer codigo) throws CodigoInexistenteException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void atualizar(Gasto tabela) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Gasto buscar(Integer codigo) throws CodigoInexistenteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

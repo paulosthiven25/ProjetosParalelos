@@ -1,0 +1,83 @@
+package br.com.fiap.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import br.com.fiap.dao.GastoDAO;
+import br.com.fiap.daoImpl.GastodaoImpl;
+import br.com.fiap.entity.Gasto;
+import br.com.fiap.entity.TipoPagamento;
+import br.com.fiap.exception.CommitException;
+import br.com.fiap.singleton.EntityManagerFactorySingleton;
+
+class Testecrud {
+	private static GastoDAO gdao;
+	private Gasto gasto1;
+	
+	
+	@BeforeEach
+	public void cadastrar() {
+		 gasto1= new Gasto(new GregorianCalendar(2010,Calendar.APRIL,27),"transporte",120,TipoPagamento.CARTAO);
+		
+		try {
+			//escoladao.cadastrar(escola);
+			gdao.cadastrar(gasto1);
+			gdao.commit();
+		} catch (CommitException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail("Deu pau!!");
+			assertNotEquals(gasto1.getCodigo(),0);
+			
+		}
+	}
+	
+	@BeforeAll
+	public static void inicializar() {
+		EntityManager em = EntityManagerFactorySingleton.getInstance().createEntityManager();
+		gdao=new GastodaoImpl(em);
+		
+		
+		
+	}
+
+	@Test
+	public void cadastro() {
+		
+		
+		try {
+			//escoladao.cadastrar(escola);
+			gdao.cadastrar(gasto1);
+			gdao.commit();
+		} catch (CommitException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail("Deu pau!!");
+			assertNotEquals(gasto1.getCodigo(),0);
+			
+		}
+	}
+	public void listarTudo() {
+		
+		try {
+			List<Gasto> g1 = new ArrayList<>();
+			g1=gdao.buscarTudo();
+			assertEquals(g1.size(),9);
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail("PAO");
+		}
+	}
+}

@@ -1,0 +1,9 @@
+package br.com.fiap.singleton;
+
+public class EntityManagerFactorySingleton {
+
+	public EntityManagerFactorySingleton() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

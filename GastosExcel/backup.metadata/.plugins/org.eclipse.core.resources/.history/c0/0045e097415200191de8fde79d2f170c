@@ -1,0 +1,38 @@
+package br.com.fiap.entity;
+
+import java.util.Calendar;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name="T_GASTOS")
+@SequenceGenerator(name="gasto",sequenceName="SQ_T_GASTOS")
+
+public class Gasto {
+	@GeneratedValue(generator="gasto",strategy=GenerationType.SEQUENCE)
+	@Id
+	@Column(name="CD_GASTO")
+    private int codigo;
+	@Temporal(TemporalType.DATE)
+	@Column(name="DT_GASTO")
+	private Calendar dataGasto;
+	@Column(name="DS_GASTO")
+	private String descricao;
+	@Column(name="VL_GASTO")
+	private float valor;
+	@Enumerated(EnumType.STRING)
+	@Column(name="DS_PAG_GASTO")
+	private TipoPagamento tipoPagamento;
+	
+
+}

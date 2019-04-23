@@ -1,0 +1,9 @@
+package br.com.fiap.daoImpl;
+
+public class GenericDAOImpl {
+
+	public GenericDAOImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

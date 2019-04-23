@@ -1,0 +1,25 @@
+package br.com.fiap.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="T_GASTOS")
+@SequenceGenerator(name="gasto",sequenceName="SQ_T_GASTOS")
+
+public class Gasto {
+	@GeneratedValue(generator="gasto",strategy=GenerationType.SEQUENCE)
+	@Id
+	@Column(name="CD_GASTO")
+	private int mes;
+	private int dia;
+	private String descricao;
+	private float valor;
+	private TipoPagamento tipoPagamento;
+	
+
+}

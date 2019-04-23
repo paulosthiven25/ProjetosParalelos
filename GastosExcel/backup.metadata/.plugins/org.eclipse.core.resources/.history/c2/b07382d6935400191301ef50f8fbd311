@@ -1,0 +1,51 @@
+package br.com.fiap.daoImpl;
+
+import java.util.Calendar;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import br.com.fiap.dao.GastoDAO;
+import br.com.fiap.entity.Gasto;
+
+public class GastodaoImpl extends GenericDAOImpl<Gasto,Integer> implements GastoDAO{
+	public GastodaoImpl(EntityManager em) {
+		super(em);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public List<Gasto> buscarPorData(Calendar data) {
+		Query q = em.createQuery("from Gasto g where g.dataGasto = :datao",Gasto.class);
+		q.setParameter("datao",data);
+		@SuppressWarnings("unchecked")
+		List<Gasto> lista = q.getResultList();
+		return lista;
+	}
+	@Override
+	public void gerarPlanilha(List<Gasto> lista) {
+		XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheetAlunos = workbook.createSheet("Gastos");
+        
+        int rownum = 0;
+        for (Gasto g : lista) {
+            Row row = sheetAlunos.createRow(rownum++);
+            int cellnum = 0;
+            Cell cellNome = row.createCell(cellnum++);
+            cellNome.setCellValue(g.getDescricao());
+            Cell cellRa = row.createCell(cellnum++);
+            cellRa.setCellValue(g.getDescricao());
+            Cell cellNota1 = row.createCell(cellnum++);
+            cellNota1.setCellValue(g.getValor());
+            Cell cellNota2 = row.createCell(cellnum++);
+            cellNota2.setCellValue(g.getTipoPagamento().toString());
+        }
+	}
+	
+}

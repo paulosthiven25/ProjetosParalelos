@@ -1,0 +1,11 @@
+import java.io.FileOutputStream;
+
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
+public class GerandoExcel {
+	HSSFWorkbook workbook = new HSSFWorkbook();
+	HSSFSheet firstSheet = workbook.createSheet("Aba1");
+
+	FileOutputStream fos = null;
+}

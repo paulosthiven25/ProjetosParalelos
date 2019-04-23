@@ -1,0 +1,84 @@
+package br.com.fiap.daoImpl;
+
+
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import java.lang.reflect.ParameterizedType;
+import java.util.Calendar;
+import java.util.List;
+
+import br.com.fiap.dao.GenericDAO;
+import br.com.fiap.entity.Gasto;
+import br.com.fiap.exception.CodigoInexistenteException;
+import br.com.fiap.exception.CommitException;
+
+public  class GenericDAOImpl<T,K,D> implements GenericDAO<T,K,D> {
+	private EntityManager em;
+	private Class<T> classz;
+	
+	
+	@SuppressWarnings("all")
+	public GenericDAOImpl(EntityManager em) {
+		super();
+		this.em = em;
+		classz = (Class<T>) ((ParameterizedType) getClass()
+				.getGenericSuperclass()).getActualTypeArguments()[0];
+	}
+	@Override
+	public void cadastrar(Object tabela) {
+		em.persist(tabela);
+		
+	}
+
+	@Override
+	public void remover(Object codigo) throws CodigoInexistenteException {
+		em.remove(buscar(codigo));
+		
+	}
+
+	@Override
+	public void atualizar(Object tabela) {
+		em.merge(tabela);
+		
+	}
+
+	@Override
+	public Object buscar(Object codigo) throws CodigoInexistenteException {
+		T tabela = 	em.find(classz,codigo);
+		if(tabela==null){
+			throw new CodigoInexistenteException();
+		}
+			
+			return tabela;
+	}
+
+	@Override
+	public void commit() throws CommitException {
+		try {
+			em.getTransaction().begin();
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			em.getTransaction().rollback();
+			throw new CommitException();
+		}
+		
+	}
+	@Override
+	public List<T> buscarPorData(D data) {
+		TypedQuery<T>
+		return null;
+	}
+	@Override
+	public void gerarPlanilha(List<T> lista) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+	
+
+}

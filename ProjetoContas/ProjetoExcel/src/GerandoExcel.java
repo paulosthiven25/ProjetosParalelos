@@ -1,0 +1,26 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class GerandoExcel {
+	public static void main(String[] args)throws Exception {
+		
+		
+	
+			XSSFWorkbook pao = new XSSFWorkbook();
+			XSSFSheet firstSheet = pao.createSheet();
+
+			FileOutputStream out = new FileOutputStream(new File("pao.xlsx"));
+	
+			pao.write(out);
+			out.close();
+			System.out.println("createworkbook.xlsx written successfully");
+	
+	}
+	
+	 }
+

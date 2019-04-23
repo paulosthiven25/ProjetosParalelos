@@ -1,0 +1,17 @@
+package br.com.fiap.daoImpl;
+
+import java.util.Calendar;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.dao.GastoDAO;
+import br.com.fiap.entity.Gasto;
+
+public class GastodaoImpl extends GenericDAOImpl<Gasto,Integer,Calendar> implements GastoDAO{
+	public GastodaoImpl(EntityManager em) {
+		super(em);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+}

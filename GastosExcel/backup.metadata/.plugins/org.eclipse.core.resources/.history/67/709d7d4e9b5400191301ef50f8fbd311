@@ -1,0 +1,14 @@
+package br.com.fiap.test;
+
+import br.com.fiap.dao.GastoDAO;
+import br.com.fiap.entity.Gasto;
+
+public class TesteRaiz {
+
+	public static void main(String[] args) {
+		final GastoDAO gdao;
+		Gasto gasto1;
+
+	}
+
+}
