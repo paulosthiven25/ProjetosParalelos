@@ -37,8 +37,8 @@ public class GastodaoImpl extends GenericDAOImpl<Gasto,Integer> implements Gasto
 
 	@Override
 	public List<Gasto> buscarTudo() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return em.createQuery("from Gasto g",Gasto.class).getResultList();
 	}
 	
 }
