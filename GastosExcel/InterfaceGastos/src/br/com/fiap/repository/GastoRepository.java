@@ -9,7 +9,8 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-import br.com.fiap.entity.Gasto;
+import br.com.fiap.TO.GastoTO;
+
 
 public class GastoRepository {
 	
@@ -17,7 +18,7 @@ public class GastoRepository {
 	private static final String URL = "http://localhost:8080/InterfaceGastos/rest/gasto/";
 	
 	
-	public void cadastrar(Gasto gasto)throws Exception {
+	public void cadastrar(GastoTO gasto)throws Exception {
 		WebResource resource = client.resource(URL);
 		ClientResponse resp = resource.type(MediaType.APPLICATION_JSON).post(ClientResponse.class,gasto);
 		
@@ -32,7 +33,7 @@ public class GastoRepository {
 	}
 	
 	
-	public List<Gasto>listar()throws Exception{
+	public List<GastoTO>listar()throws Exception{
 		Client client =Client.create();
 		
 		WebResource resource = client.resource("http://localhost:8080/11-WS-Restful/rest/filme");
@@ -41,7 +42,7 @@ public class GastoRepository {
 
 		//valida o status http da resposta
 		if(resp.getStatus()==200) {
-			Gasto[] filmes = resp.getEntity(Gasto[].class);
+			GastoTO[] filmes = resp.getEntity(GastoTO[].class);
 			return  Arrays.asList(filmes);
 		}
 		else{
