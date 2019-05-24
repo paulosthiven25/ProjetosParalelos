@@ -11,13 +11,56 @@
 <ui:composition template="_padrao.xhtml">   
 	<ui:define name="conteudo">
 	<div class="container">
+	<h3>Cadastro de Gastos mensais</h3>
 		<h:form>
-			<h:messages id="messages"/>
+			<h:messages id="messages" styleClass="alert alert-success"/>
 			<div class="form-group">
-				<h:outputLabel value="Data do Gasto" for="data" styleClass="col-form-label"/>
-				<p:calendar id="data" value="#{clienteBean.cliente.dataNascimento.time}" />
+				<h:outputLabel value="Data do Gasto" for="data"/>
+				<p:calendar locale="pt" id="data" value="#{gastoBean.gasto.dataGasto.time}"/>
 			</div>
-		
+			
+			<div class="form-group">
+				<h:outputLabel value="Descrição" for="descricao"/>
+				<h:inputTextarea styleClass="form-control" id="descricao" value="#{gastoBean.gasto.descricao}" />
+			</div>
+			
+			<div class="form-group">
+				<h:outputLabel value="Tipo de descrição" for="tipo"/>
+				
+				<h:selectOneMenu id="tipo" value="#{gastoBean.gasto.tipoGasto}" styleClass="form-control" style="width:40%;">
+					<f:selectItems value="#{gastoBean.getTipoGasto()}"
+						var="g"
+						itemLabel="#{g.desc}"
+						itemValue="#{g}"/>
+				</h:selectOneMenu>
+			
+			</div >
+			
+			<div class="form-group">
+				<h:outputLabel value="Tipo de descrição" for="local"/>
+				<h:inputText value="#{gastoBean.gasto.localGasto}" id="local" styleClass="form-control"/>
+			</div>
+			
+			<div class="form-group">
+				<h:outputLabel value="Valor do Gasto" for="valor"/>
+				
+				<h:inputText value="#{gastoBean.gasto.valor}" id="valor" styleClass="form-control">
+					<f:convertNumber pattern= "#,##" />
+				</h:inputText>
+			</div>
+			
+			<div class="form-group">
+				<h:outputLabel value="Tipo de Pagamento" for="pagamento"/>
+				<h:selectOneRadio id="pagamento" value="#{gastoBean.gasto.tipopagamneto}">
+					<f:selectItems value="#{gastoBean.getTipoPagamento()}"
+						var="p"
+						itemLabel="#{p.desc}"
+						itemValue="#{p}"/>
+				</h:selectOneRadio>
+			</div>
+			
+			
+		<h:commandButton value="Cadastrar" styleClass="btn btn-info" action="#{gastoBean.cadastrar}"/>
 		</h:form>
 	</div>	
 	</ui:define>

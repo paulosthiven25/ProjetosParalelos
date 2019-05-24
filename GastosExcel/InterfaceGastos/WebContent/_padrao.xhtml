@@ -7,7 +7,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 	
-
+<!--Link para o CSS-->
 <h:outputStylesheet library="css" name="bootstrap.min.css"/>
 
 	<h:head>
@@ -19,39 +19,44 @@
 
 
 <h:body>
-	
+	<!--Menu da página-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  		<a class="navbar-brand" href="#">Navbar</a>
+	<!--Link com  o nome InterfaceG que recarrega para a página inicial-->
+  		<a class="navbar-brand" href="#">InterfaceG</a>
   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     		<span class="navbar-toggler-icon"></span>
   		</button>
-
+<!--Itens do menu-->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <h:link outcome="cadastro-onibus" styleClass="dropdown-item">Cadastrar</h:link>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
+    
+      	<li class="nav-item ">
+       		 <a class="nav-link" href="#">Cadastro</a>
+     	</li>
+     	
+      	<li class="nav-item">
+        	<a class="nav-link" href="#">Gráficos</a>
+     	</li>
+     	
+      	<li class="nav-item dropdown">
+      	
+        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          		Listagem
+        	</a>
+        	
+        	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          		<h:link outcome="cadastro-onibus" styleClass="dropdown-item">Por Data</h:link>
+          		<a class="dropdown-item" href="#">Por tipo de gasto</a>
+         		<a class="dropdown-item" href="#">Por tipo de pagamento</a>
+       		</div>
+       		
+     	</li>
+     
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <!--barra de pesquisa e botão da pesquisa-->
+    	<form class="form-inline my-2 my-lg-0">
+      	<input class="form-control mr-sm-2" type="search" placeholder="Digite algo" aria-label="Search"/>
+     	 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
     </form>
   </div>
 </nav>
@@ -67,6 +72,8 @@
 
 	<h:outputScript library="js" name="jquery-3.4.0.min.js"/>
 <h:outputScript library="js" name="bootstrap.min.js"/>
+
+<script> PrimeFaces.locales['pt'] = { closeText: 'Fechar', prevText: 'Anterior', nextText: 'Próximo', currentText: 'Começo', monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'], monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'], dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'], dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'], dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'], weekHeader: 'Semana', firstDay: 0, isRTL: false, showMonthAfterYear: false, yearSuffix: '', timeOnlyTitle: 'Só Horas', timeText: 'Tempo', hourText: 'Hora', minuteText: 'Minuto', secondText: 'Segundo', ampm: false, month: 'Mês', week: 'Semana', day: 'Dia', allDayText: 'Todo o Dia' }; </script>
 				
 </h:body>
 

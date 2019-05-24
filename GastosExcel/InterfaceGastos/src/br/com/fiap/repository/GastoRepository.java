@@ -15,7 +15,7 @@ import br.com.fiap.TO.GastoTO;
 public class GastoRepository {
 	
 	Client client = Client.create();
-	private static final String URL = "http://localhost:8080/InterfaceGastos/rest/gasto/";
+	private static final String URL ="http://localhost:8080/Servidor-WS-Gastos/rest/gasto";
 	
 	
 	public void cadastrar(GastoTO gasto)throws Exception {
@@ -24,7 +24,7 @@ public class GastoRepository {
 		
 		
 				if(resp.getStatus()!=201) {
-					throw new Exception("Ero ao conectar no servidor");	
+					throw new Exception("Ero ao conectar no servidor; "+resp.getStatus());	
 					
 					
 					
