@@ -20,6 +20,7 @@ public class GastoBean {
 
 	private GastoRepository gry;
 	private GastoTO gasto;
+
 	
 	@PostConstruct
 	public void init() {
@@ -47,18 +48,17 @@ public class GastoBean {
 			
 		}
 	}
-	
-	/*public String excluir(int codigo) {
+
+	public String excluir(int codigo) {
 		try {
 			gry.remover(codigo);
-			dao.commit();
 			addMessage("Removido!");
 		} catch (Exception e) {
 			e.printStackTrace();
 			addMessage("Erro");
 		}
-		return "lista-onibus?faces-redirect=true";
-	}*/
+		return "listagem?faces-redirect=true";
+	}
 	
 	public String cadastrar() {
 		try {
@@ -70,7 +70,7 @@ public class GastoBean {
 				dao.commit();
 				addMessage("Atualizado!");
 			}*/
-			return "cadastro?faces-redirect=true"; //navega para a página de cadastro (nome do arquivo)
+			return "listagem?faces-redirect=true"; //navega para a página de cadastro (nome do arquivo)
 		} catch (Exception e) {
 			e.printStackTrace();
 			addMessage("Erro..");

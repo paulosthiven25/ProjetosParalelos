@@ -1,7 +1,7 @@
 package br.com.fiap.TO;
 
 public enum TipoPagamento {
-DINHEIRO("Dinheiro"),CARTÃO("Cartão");
+DINHEIRO("Dinheiro"),CARTAO("Cartão");
 private String desc;
 
 public String getDesc() {

@@ -23,23 +23,23 @@ public class GastoTO {
 	
 	private float valor;
 	
-	private TipoPagamento tipopagamneto;
+	private TipoPagamento tipoPagamento;
 	
 	
 
 
-	public GastoTO(Calendar dataGasto, String descricao, TipoGasto tipoGasto, String localGasto, float valor,TipoPagamento tipopagamneto) {
+	public GastoTO(Calendar dataGasto, String descricao, TipoGasto tipoGasto, String localGasto, float valor,TipoPagamento tipoPagamento) {
 		super();
 		this.dataGasto = dataGasto;
 		this.descricao = descricao;
 		this.tipoGasto = tipoGasto;
 		this.localGasto = localGasto;
 		this.valor = valor;
-		this.tipopagamneto= tipopagamneto;
+		this.tipoPagamento= tipoPagamento;
 	}
 
 
-	public GastoTO(int codigo, Calendar dataGasto, String descricao, TipoGasto tipoGasto, String localGasto, float valor,TipoPagamento tipopagamneto) {
+	public GastoTO(int codigo, Calendar dataGasto, String descricao, TipoGasto tipoGasto, String localGasto, float valor,TipoPagamento tipoPagamento) {
 		super();
 		this.codigo = codigo;
 		this.dataGasto = dataGasto;
@@ -47,7 +47,7 @@ public class GastoTO {
 		this.tipoGasto = tipoGasto;
 		this.localGasto = localGasto;
 		this.valor = valor;
-		this.tipopagamneto= tipopagamneto;
+		this.tipoPagamento= tipoPagamento;
 	}
 
 
@@ -96,13 +96,16 @@ public class GastoTO {
 	}
 
 
-	public TipoPagamento getTipopagamneto() {
-		return tipopagamneto;
+
+
+
+	public TipoPagamento getTipoPagamento() {
+		return tipoPagamento;
 	}
 
 
-	public void setTipopagamneto(TipoPagamento tipopagamneto) {
-		this.tipopagamneto = tipopagamneto;
+	public void setTipoPagamento(TipoPagamento tipoPagamento) {
+		this.tipoPagamento = tipoPagamento;
 	}
 
 
