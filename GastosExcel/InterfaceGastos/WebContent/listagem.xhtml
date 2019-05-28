@@ -12,6 +12,14 @@
 	
 	<ui:define name="conteudo">
 		<div class="container">	
+			<div class="form-group">
+				<h:selectOneMenu>
+				
+				
+				</h:selectOneMenu>
+			
+			</div>
+		
 			<h1>Gastos Realizados</h1>
 			<p:dataTable value="#{gastoBean.listar()}" var="g" paginator="true" rows="5" emptyMessage="Cliente não encontrados"
 						rowsPerPageTemplate="3,6,9">
