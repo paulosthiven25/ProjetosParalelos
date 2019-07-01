@@ -1,3 +1,3 @@
 # ProjetosParalelos
--Repositório que possui alguns projetos iniciados por conta própria em 2018 - 
-E um projeto para avaliação da faculdade
+-Repositório que possui alguns projetos iniciados por conta própria e um projeto para avaliação da faculdade feito em 2018 - 
+
