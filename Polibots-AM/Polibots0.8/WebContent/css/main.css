@@ -1,0 +1,199 @@
+body {
+  padding-top: 54px;
+}
+
+@media only screen and (max-width: 768px){
+	.right{
+		display: none;
+	}
+	
+	.left{
+		width: 100%;
+	}
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+
+.business-header {
+  height: 50vh;
+  min-height: 550px;
+  background: url('https://radiostudent.si/sites/default/files/slike/2017-03-07-%E2%80%9Cpolitika-je-zelo-plehka-obrt%E2%80%9D-69271.jpg') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.card {
+  height: 100%;
+}
+
+
+/*-----------------------------------------------------------*/
+
+
+
+/* TORNANDO A DIV FLEXBOX */
+.main{
+    display: flex;
+    justify-content: center;
+    height: 650px;
+    width: 100%;
+    
+}
+
+
+/* CAMPO DO POLITICO */
+.left{
+    width: 50%;
+    margin: 1%; 
+}
+
+
+.politico{
+    display: flex;
+    justify-content: space-between;
+    border-style: solid;
+    background: #e5e5e5;
+}
+
+#candidato-urna-img{
+    width: 200px;
+    height: 300px;
+}
+
+.cargo-nome{
+    margin-left: 5%;
+}
+
+.numero-candidato span{
+  padding: 10px;
+  background: white;
+}
+
+
+.partido{
+    display: flex;
+}
+
+.chat{
+    height: 185px;
+    margin-top: 0px;
+    background: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.mensagem-enviada{
+    margin-top: 50px;
+}
+
+.mensagem-enviada p{
+    background: #26408b;
+    color: white;
+    border-radius: 15px;
+    padding: 5px;
+    margin-top: 10px;
+    position: relative;
+    width: max-content;
+    height: max-content;
+    float:right;
+    margin-right: 20px;
+}
+
+.mensagem-recebida{
+    margin-top: -20px;
+    display: flex;
+}
+
+.mensagem-recebida p{
+    background: #378b26;
+    color: white;
+    border-radius: 15px;
+    padding: 5px;
+    margin-top: 30px;
+    height: max-content;
+    width: max-content;
+    margin-left: 10px;
+}
+
+.mensagem-recebida img{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
+}
+
+/* CAMPO DA URNA */
+.right{
+    width: 50%;
+    margin: 1%;
+}
+
+/* URNA */
+.urna .header{
+    background: #e5e5e5;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.urna .header h1{
+    font-weight: 700;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.urna .body{
+    background: rgb(39, 38, 38);
+    height: 350px;
+}
+
+.urna .footer{
+    background: rgb(68, 67, 67);
+    height: 90px;;
+}
+
+.urna button{
+    font-weight: 700;
+    box-shadow: inset 0px -7px 0px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0.45em;
+    cursor: pointer;
+    outline: none;
+}
+
+.urna .footer button{
+    height: 60px;
+    margin-top: 15px;
+    width: 30%;
+}
+
+.urna .body button{
+    width: 75px;
+    height: 60px;
+    margin: 1%;
+    margin-top: 20px;
+    color: rgb(224, 223, 223);
+    background: rgb(34, 33, 33);
+
+}
+
+.urna .body button:hover{
+    background: rgb(29, 28, 28);
+}
+
+.enviar-mensagem{
+    width: 100%;
+}  
+
+.enviar-mensagem button{
+    background: #26408b;
+    color: white;
+}
