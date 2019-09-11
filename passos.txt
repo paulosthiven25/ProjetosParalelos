@@ -1,0 +1,22 @@
+- Criar o contexto, classe que herda de DbContext
+- Configurar o banco de dados -> appsettings.json
+- Configurar a injeção de dependência -> Startup.cs
+- Migração -> criar e aplicar no banco de dados
+
+- CRUD
+	- Controller
+		C - GET para abrir a página do formulário
+			POST para processar as informações
+				(mensagem e redirect)
+			
+		R - GET para abrir a página com a lista de times	
+		
+		U - GET que recebe o código e envia o time para página
+			POST para atualizar no banco de dados
+				(mensagem e redirect)
+			
+		D - POST recebe um código e exclui do banco 	
+				(mensagem e redirect)
+
+- Ajusta o Layout, colocando os links, bootwatch
+- Criar um Tag Helper (Mensagem ou Botão)				
